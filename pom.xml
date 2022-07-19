@@ -55,8 +55,7 @@
     <dependency>
       <groupId>io.jenkins.plugins</groupId>
       <artifactId>jakarta-activation-api</artifactId>
-      <!-- TODO https://github.com/jenkinsci/jakarta-activation-api-plugin/pull/19 -->
-      <version>2.0.0-3-rc29.207e6342a_a_7e</version>
+      <version>2.0.0-3</version>
     </dependency>
   </dependencies>
 
@@ -72,4 +71,17 @@
       <url>https://repo.jenkins-ci.org/public/</url>
     </pluginRepository>
   </pluginRepositories>
+
+  <!-- The javax-mail-api plugin also provides these same classes, so we need to mask them to avoid conflicts. -->
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jenkins-ci.tools</groupId>
+        <artifactId>maven-hpi-plugin</artifactId>
+        <configuration>
+          <maskClasses>com.sun.mail.</maskClasses>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
