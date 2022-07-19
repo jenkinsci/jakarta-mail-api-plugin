@@ -55,7 +55,8 @@
     <dependency>
       <groupId>io.jenkins.plugins</groupId>
       <artifactId>jakarta-activation-api</artifactId>
-      <version>2.0.0-2</version>
+      <!-- TODO https://github.com/jenkinsci/jakarta-activation-api-plugin/pull/19 -->
+      <version>2.0.0-3-rc29.207e6342a_a_7e</version>
     </dependency>
   </dependencies>
 
